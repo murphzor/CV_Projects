@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pyramids"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/wonder"
+        android:layout_width="115dp"
+        android:layout_height="90dp"
+        android:layout_above="@+id/irish"
+        android:layout_alignLeft="@+id/irish"
+        android:layout_marginBottom="48dp"
+        android:text="World Wonders" />
+
+    <Button
+        android:id="@+id/irish"
+        android:layout_width="115dp"
+        android:layout_height="90dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="124dp"
+        android:text="Famous Irish Sites" />
+    
+</RelativeLayout>
+
