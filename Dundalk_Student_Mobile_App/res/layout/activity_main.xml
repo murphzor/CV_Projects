@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/online_timetables"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="58dp"
+        android:text="Online Timetable" />
+
+    <Button
+        android:id="@+id/local_timetables"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignBottom="@+id/online_timetables"
+        android:layout_alignLeft="@+id/room_timetables"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/online_timetables"
+        android:text="Local Timetable" />
+
+    <Button
+        android:id="@+id/room_search"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/online_timetables"
+        android:layout_marginTop="19dp"
+        android:text="Free Room Search" />
+
+    <Button
+        android:id="@+id/room_timetables"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignBaseline="@+id/room_search"
+        android:layout_alignBottom="@+id/room_search"
+        android:layout_alignParentRight="true"
+        android:text="Room Timetables" />
+   
+</RelativeLayout>

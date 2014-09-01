@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/starttime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/start"
+        android:layout_alignBottom="@+id/start"
+        android:layout_alignLeft="@+id/endtime"
+        android:text="00:00"
+        android:textColor="#343434"
+        android:textSize="12dip" />
+
+    <TextView
+        android:id="@+id/classname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="classname"
+        android:textColor="#040404"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/classname"
+        android:text="Start:" />
+
+    <TextView
+        android:id="@+id/endtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/end"
+        android:layout_marginLeft="17dp"
+        android:layout_toRightOf="@+id/end"
+        android:text="01:00"
+        android:textColor="#343434"
+        android:textSize="12dip" />
+
+    <TextView
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/start"
+        android:text="End:  " />
+
+    <TextView
+        android:id="@+id/lecname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/endtime"
+        android:text="Lecturer:" />
+
+    <TextView
+        android:id="@+id/lecturer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lecname"
+        android:layout_alignBottom="@+id/lecname"
+        android:layout_toRightOf="@+id/lecname"
+        android:text="E.Morgan" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/endtime"
+        android:layout_toRightOf="@+id/lecturer"
+        android:text="Type" />
+
+    <TextView
+        android:id="@+id/classtype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/endtime"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/type"
+        android:text="Practical" />
+
+    <TextView
+        android:id="@+id/roomlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/endtime"
+        android:layout_toRightOf="@+id/lecturer"
+        android:text="Room:" />
+
+    <TextView
+        android:id="@+id/room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/roomlabel"
+        android:layout_alignBottom="@+id/roomlabel"
+        android:layout_alignLeft="@+id/classtype"
+        android:text="..." />
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.studentappscreens"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" >
+    </uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.studentappscreens.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.timetable.Timetable1"
+            android:label="@string/title_activity_timetable1" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.timetable.Timetable2"
+            android:label="@string/title_activity_timetable2" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.Map"
+            android:label="@string/title_activity_map" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.Calendar"
+            android:label="@string/title_activity_calendar" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.timetable.DisplayOnlineTimetable"
+            android:label="@string/title_activity_display_online_timetable" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.AsActivity"
+            android:label="@string/title_activity_as" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.timetable.SectionFragment"
+            android:label="@string/title_activity_dummy_section_fragment" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.timetable.RoomTimetables"
+            android:label="@string/title_activity_room1" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.timetable.DisplayRoomTimetable"
+            android:label="@string/title_activity_display_room_timetable" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.timetable.DisplayLocalTimetable"
+            android:label="@string/title_activity_display_local_timetable" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.timetable.DisplaySingleLocalTimetable"
+            android:label="@string/title_activity_display_single_local_timetable" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.timetable.RoomActivities"
+            android:label="@string/title_activity_room_activities" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.timetable.FindFreeRooms"
+            android:label="@string/title_activity_find_free_rooms" >
+        </activity>
+        <activity
+            android:name="com.example.studentappscreens.timetable.DisplayFreeRooms"
+            android:label="@string/title_activity_display_free_rooms" android:screenOrientation="portrait">
+        </activity>
+    </application>
+
+</manifest>
