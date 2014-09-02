@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+ <head>
+	<title>Learning jQuery</title>
+ 
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+ 
+ <style>
+     
+     body {
+         margin: 0;
+         font-family: sans-serif;
+     }
+     
+     #topBarDiv {
+         background-color: #EDEDED;
+         height: 50px;
+         width: 100%;
+         margin: 0;
+         border:  black solid 1px;
+     }
+     
+     #title {
+         margin: 12px 0 12px 18px;
+         font-weight: bold;
+         font-size: 1.3em;
+         float: left;
+     }
+     
+     #buttonList {
+         
+         list-style: none;
+         border: grey solid 1px;
+         border-radius: 5px;
+         float: left;
+         margin: 5px 0 5px 700px;
+         padding-left: 0;
+         
+         
+     }
+     
+     #buttonList li {
+         
+         border: grey solid 1px;
+         float: left;
+         padding: 9px 5px 5px 9px;
+         font-size: 1.2em;
+         
+     }
+     
+     #runBtn {
+         float: right;
+         font-size: 1.4em;
+         margin: 9px 400px 9px 0px;
+         border-radius: 5px;
+     }
+     
+     #container {
+         
+         width: 100%;
+         height:100%;
+     }
+	 
+     .codearea {
+         
+         float: left;
+         width: 478px;
+         height: 880px;
+         border-right: black solid 2px;
+         margin-left: 0;
+
+     }
+     
+     .codeareaBtn {
+         float: right;
+     }
+
+     textarea {
+        border-style: none;
+        resize: none;
+        width: 400px;
+        height: 800px;
+        padding: 0;
+        margin: 5px 0 5px 5px;
+        outline: none;
+        font-size: 1.2em;
+        
+     }
+     
+     iframe {
+         
+
+     }
+ 
+ </style> 
+ </head>
+ 
+ <body>
+ 
+     <div id="topBarDiv">
+     
+         <p id="title">
+            CodePlayer
+         </p>
+
+         <ul id="buttonList">
+            <li id="htmlToggle">HTML</li>
+            <li id="cssToggle">CSS</li>
+            <li id="jsToggle">JS</li>
+            <li id="resultToggle">Result</li>
+         </ul>
+
+         <button id="runBtn">Run</button>
+
+     </div>
+
+     <div id="container">
+     
+        <div class="codearea" id="htmlarea">
+            
+            <textarea id="htmlcode" class="textarea"></textarea>
+            
+            <button class="codeareaBtn">
+                HTML
+            </button>
+        </div>
+
+        <div class="codearea" id="cssarea">
+
+            <textarea id="csscode" class="textarea"></textarea>
+
+            <button class="codeareaBtn">
+                CSS
+            </button>
+     
+        </div>
+
+        <div class="codearea" id="jsarea">
+
+            <textarea id="jscode" class="textarea"></textarea>
+
+            <button class="codeareaBtn">
+                JS
+            </button>
+        </div>
+
+        <div class="codearea" id="resultarea">
+
+            <iframe id="resultframe"></iframe>
+        </div>
+     
+     </div>
+
+	
+	<script>
+     /*
+     var htmlSelected;
+     var cssSelected;
+     var jsSelected;
+     var resultSelected;
+     */
+     var htmlSelected;
+     var cssSelected;
+     var jsSelected;
+     var resultSelected;
+     var selectedArray;
+     var selectedCount;
+
+     function setVariables() {
+         htmlSelected = true;
+         cssSelected = true;
+         jsSelected = true;
+         resultSelected = true;
+         selectedArray = [htmlSelected, cssSelected, jsSelected, resultSelected];
+         selectedCount = 0;
+     }
+
+     function checkSelected() {
+         selectedCount = 0;
+         console.log(htmlSelected);
+         console.log(selectedArray);
+         for (var i = 0; i < selectedArray.length; i++) {
+             console.log(selectedArray[i]);
+             if (selectedArray[i]) {
+                 selectedCount++;
+             }
+         }
+
+         return selectedCount;
+     }
+
+     function setDivSizes() {
+         checkSelected();
+         //alert(selectedCount);
+         $(".codearea").css("width", 1912 / selectedCount + 'px');
+         $("#resultframe").width(1910 / selectedCount);
+         $("#resultframe").height(870);
+     }
+
+     $("#htmlToggle").click(function () {
+         if (selectedArray[0]) {
+             selectedArray[0] = false;
+             $(this).css("background-color", "grey");
+             $("#htmlarea").css("display", "none");
+         } else {
+             selectedArray[0] = true;
+             $(this).css("background-color", "#EDEDED");
+             $("#htmlarea").css("display", "block");
+         }
+         setDivSizes();
+     });
+
+     $("#cssToggle").click(function () {
+         if (selectedArray[1]) {
+             selectedArray[1] = false;
+             $(this).css("background-color", "grey");
+             $("#cssarea").css("display", "none");
+         } else {
+             selectedArray[1] = true;
+             $(this).css("background-color", "#EDEDED");
+             $("#cssarea").css("display", "block");
+         }
+         setDivSizes();
+     });
+     $("#jsToggle").click(function () {
+         if (selectedArray[2]) {
+             selectedArray[2] = false;
+             $(this).css("background-color", "grey");
+             $("#jsarea").css("display", "none");
+         } else {
+             selectedArray[2] = true;
+             $(this).css("background-color", "#EDEDED");
+             $("#jsarea").css("display", "block");
+         }
+         setDivSizes();
+     });
+     $("#resultToggle").click(function () {
+         if (selectedArray[3]) {
+             selectedArray[3] = false;
+             $(this).css("background-color", "grey");
+             $("#resultarea").css("display", "none");
+         } else {
+             selectedArray[3] = true;
+             $(this).css("background-color", "#EDEDED");
+             $("#resultarea").css("display", "block");
+         }
+         setDivSizes();
+     });
+
+     $("#runBtn").click(function () {
+         //var str = $("#htmlcode").val();
+         //var str = "<b>Hi</b> everyone";
+         //alert(str);
+         //$("#resultarea").html($("#htmlcode").val());
+         //$("#resultarea").css("color", "red");
+
+         //alert($("#csscode").val());
+         $("#resultframe").contents().find("html").html('<style>' + $("#csscode").val() + '</style>' + $("#htmlcode").val());
+
+         eval($("#jscode").val());
+     });
+
+     setVariables();
+     setDivSizes();   
+	</script>	 
+ 
+ </body>
+</html>
